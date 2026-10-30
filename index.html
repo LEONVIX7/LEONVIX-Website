@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090909">
+<meta name="description" content="LEONVIX — Minecraft gaming, adventures and entertainment.">
+<title>LEONVIX | Official Minecraft Channel</title>
+<style>
+:root{--red:#ff1028;--red2:#c90019;--bg:#070707;--panel:#101010;--muted:#aaa;--line:rgba(255,25,45,.42)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:#fff;font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.topbar{height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 6%;background:rgba(5,5,5,.96);border-bottom:1px solid #242424;position:relative;z-index:5}
+.brand{font-size:31px;font-weight:1000;letter-spacing:-1.8px}
+.brand span{color:var(--red)}
+.nav{display:flex;align-items:center;gap:38px;height:100%}
+.nav a{font-size:12px;color:#ddd;letter-spacing:.4px;height:100%;display:flex;align-items:center;position:relative}
+.nav a:hover,.nav a.active{color:#fff}
+.nav a.active:after,.nav a:hover:after{content:"";position:absolute;bottom:0;left:0;width:100%;height:3px;background:var(--red);box-shadow:0 0 12px var(--red)}
+.yt-icon{background:#f00;color:#fff;border-radius:8px;padding:8px 11px;font-size:17px;line-height:1}
+.hero{min-height:485px;position:relative;display:flex;align-items:center;padding:65px 9%;overflow:hidden;border-bottom:1px solid var(--line);background:
+linear-gradient(90deg,rgba(0,0,0,.97) 0%,rgba(0,0,0,.84) 38%,rgba(0,0,0,.12) 100%),
+linear-gradient(0deg,rgba(0,0,0,.28),rgba(0,0,0,.08)),
+url('assets/leonvix-avatar.jpeg') center 42%/cover no-repeat}
+.hero:before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(135deg,transparent 0 75px,rgba(255,0,25,.07) 76px 78px);mix-blend-mode:screen}
+.hero:after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 100px #000}
+.hero-copy{position:relative;z-index:1;max-width:570px}
+.eyebrow{font-size:12px;letter-spacing:5px;color:#fff;text-transform:uppercase}
+.eyebrow b{color:var(--red)}
+.hero h1{font-size:clamp(62px,9vw,105px);line-height:.98;margin:18px 0 17px;font-weight:1000;letter-spacing:-5px;text-shadow:0 5px 25px #000}
+.hero h1 span{color:var(--red)}
+.brush{font-style:italic}
+.categories{font-size:14px;font-weight:700;letter-spacing:1px;margin:20px 0 25px}
+.categories i{color:var(--red);font-style:normal;padding:0 10px}
+.cta{display:inline-flex;align-items:center;gap:14px;padding:17px 24px;background:var(--red);border-radius:30px;font-weight:800;font-size:14px;box-shadow:0 0 25px rgba(255,0,30,.22);transition:.25s}
+.cta:hover{background:#ff3348;transform:translateY(-3px);box-shadow:0 0 30px rgba(255,0,30,.5)}
+.play{background:white;color:var(--red);border-radius:5px;padding:4px 7px;font-size:13px}
+.scroll{position:absolute;z-index:1;bottom:25px;left:50%;transform:translateX(-50%);font-size:10px;letter-spacing:1px;text-align:center}
+.chevron{display:block;width:18px;height:18px;border-right:3px solid var(--red);border-bottom:3px solid var(--red);transform:rotate(45deg);margin:8px auto 0}
+.about{min-height:310px;display:grid;grid-template-columns:minmax(250px,36%) 1fr;align-items:center;gap:5%;padding:22px 7%;position:relative;overflow:hidden;background:radial-gradient(ellipse at 75% 50%,#180407 0%,#090909 50%,#050505 100%);border-bottom:1px solid var(--line)}
+.about-photo{height:270px;max-width:380px;width:100%;background:url('assets/leonvix-avatar.jpeg') center 34%/cover no-repeat;filter:drop-shadow(0 0 20px rgba(255,0,30,.35));mask-image:linear-gradient(to right,#000 75%,transparent 100%)}
+.about-copy{border-left:6px solid var(--red);padding:0 0 0 24px;max-width:720px}
+.section-kicker{color:var(--red);font-size:13px;font-weight:900;letter-spacing:4px;margin-bottom:7px}
+.about h2{font-size:38px;line-height:1.1;margin-bottom:12px}
+.about h2 span{color:var(--red)}
+.about-copy>p{font-size:18px;line-height:1.55;color:#eee;max-width:600px}
+.features{display:flex;gap:28px;flex-wrap:wrap;margin-top:28px}
+.feature{display:flex;align-items:center;gap:10px;color:#ddd;font-size:12px;line-height:1.45}
+.feature-icon{font-size:25px;color:var(--red)}
+.feature strong{font-weight:600}
+.videos{padding:42px 5.3% 38px;background:#080808}
+.heading{border-left:5px solid var(--red);padding-left:17px;margin-bottom:24px}
+.heading .section-kicker{margin-bottom:5px}
+.heading h2{font-size:27px;letter-spacing:-.5px}
+.video-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.video-card{min-width:0;transition:transform .25s}
+.video-card:hover{transform:translateY(-5px)}
+.thumb{height:190px;position:relative;overflow:hidden;border:1px solid #3a3a3a;border-radius:9px;background:#171717}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s}
+.video-card:hover .thumb img{transform:scale(1.05)}
+.duration{position:absolute;right:8px;bottom:8px;background:rgba(0,0,0,.88);padding:4px 7px;border-radius:4px;font-size:11px}
+.video-card h3{font-size:15px;line-height:1.4;margin:10px 0 4px}
+.video-card p{font-size:12px;color:#999}
+.more-wrap{text-align:center;margin-top:28px}
+.outline-btn{display:inline-block;border:1px solid var(--red);border-radius:24px;padding:11px 30px;font-size:11px;font-weight:800;letter-spacing:.5px;transition:.2s}
+.outline-btn:hover{background:var(--red);box-shadow:0 0 18px #ff102855}
+.join{padding:38px 10%;min-height:180px;display:flex;align-items:center;justify-content:space-between;gap:25px;background:linear-gradient(90deg,rgba(0,0,0,.96),rgba(30,0,5,.68)),url('assets/minecraft-mobs.jpeg') center 43%/cover;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.join h2{font-size:clamp(30px,5vw,46px);font-style:italic;font-weight:1000;margin:5px 0}
+.join h2 span{color:var(--red)}
+.join p{color:#ddd;font-size:13px;line-height:1.6;max-width:430px}
+.join-action{display:flex;align-items:center;gap:20px}
+.big-play{background:#f00;border-radius:13px;padding:15px 23px;font-size:29px;box-shadow:0 0 25px #f003}
+.bell{font-size:29px}
+footer{padding:23px 6%;display:flex;align-items:center;justify-content:space-between;gap:15px;background:#050505;color:#888;font-size:11px}
+footer .brand{font-size:24px;color:white}
+.social{display:flex;gap:17px;font-size:17px;color:#aaa}
+.social a:hover{color:var(--red)}
+@media(max-width:760px){
+ .topbar{height:62px;padding:0 5%}.brand{font-size:25px}.nav{gap:15px}.nav a{font-size:10px}.nav .yt-icon{padding:6px 8px}
+ .hero{min-height:510px;padding:60px 7%;background-position:58% center}
+ .hero h1{font-size:clamp(58px,14vw,82px);letter-spacing:-3px}
+ .eyebrow{letter-spacing:3px;font-size:10px}.categories{font-size:11px}
+ .about{grid-template-columns:1fr;gap:5px;padding:25px 7% 35px}
+ .about-photo{height:230px;max-width:100%;background-position:center 30%;mask-image:linear-gradient(to bottom,#000 75%,transparent)}
+ .about-copy{margin-top:-8px}.about h2{font-size:32px}.about-copy>p{font-size:16px}
+ .features{gap:17px}.feature{font-size:11px}
+ .videos{padding:35px 5%}.video-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+ .thumb{height:145px}.video-card h3{font-size:13px}
+ .join{padding:32px 7%;min-height:180px}.join-action{gap:12px}.big-play{font-size:22px;padding:12px 17px}
+ footer{flex-wrap:wrap}.social{margin-left:auto}
+}
+@media(max-width:440px){
+ .nav{gap:10px}.nav a{font-size:9px}.nav .yt-icon{font-size:13px}
+ .hero{min-height:470px;background-position:60% center}
+ .video-grid{grid-template-columns:1fr}.thumb{height:205px}
+ .join{align-items:flex-start;flex-direction:column}.join-action{align-self:flex-end}
+ footer{font-size:10px}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home">LEON<span>VIX</span></a>
+  <nav class="nav" aria-label="Main navigation">
+    <a class="active" href="#home">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#videos">VIDEOS</a>
+    <a class="yt-icon" href="https://www.youtube.com/@LeonVix" target="_blank" rel="noopener" aria-label="YouTube">▶</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-copy">
+    <div class="eyebrow">OFFICIAL <b>YOUTUBE CHANNEL</b></div>
+    <h1 class="brush">LEON<span>VIX</span></h1>
+    <div class="categories">GAMING <i>/</i> MINECRAFT <i>/</i> ENTERTAINMENT</div>
+    <a class="cta" href="https://www.youtube.com/@LeonVix" target="_blank" rel="noopener">
+      <span class="play">▶</span> SUBSCRIBE ON YOUTUBE <span>❯</span>
+    </a>
+  </div>
+  <a class="scroll" href="#about">SCROLL DOWN<span class="chevron"></span></a>
+</section>
+
+<section class="about" id="about">
+  <div class="about-photo" role="img" aria-label="LEONVIX red and black Minecraft avatar"></div>
+  <div class="about-copy">
+    <div class="section-kicker">ABOUT</div>
+    <h2>LEON <span>VIX</span></h2>
+    <p>Welcome in Leon Vix channel<br>we have Minecraft content here 😉</p>
+    <div class="features">
+      <div class="feature"><span class="feature-icon">⬢</span><strong>Minecraft<br>Gameplay</strong></div>
+      <div class="feature"><span class="feature-icon">🎮</span><strong>Survival<br>&amp; Adventure</strong></div>
+      <div class="feature"><span class="feature-icon">☆</span><strong>Fun Moments<br>&amp; More</strong></div>
+    </div>
+  </div>
+</section>
+
+<section class="videos" id="videos">
+  <div class="heading">
+    <div class="section-kicker">LATEST VIDEOS</div>
+    <h2>FEATURED CONTENT</h2>
+  </div>
+  <div class="video-grid">
+    <article class="video-card">
+      <a href="https://www.youtube.com/@LeonVix" target="_blank" rel="noopener" aria-label="Visit LeonVix YouTube channel">
+        <div class="thumb"><img src="assets/minecraft-night.jpeg" alt="Minecraft night village with zombie and iron golem"><span class="duration">12:48</span></div>
+        <h3>Minecraft Night Adventure</h3>
+      </a>
+      <p>Minecraft • Adventure</p>
+    </article>
+    <article class="video-card">
+      <a href="https://www.youtube.com/@LeonVix" target="_blank" rel="noopener" aria-label="Visit LeonVix YouTube channel">
+        <div class="thumb"><img src="assets/minecraft-mobs.jpeg" alt="Minecraft mobs group selfie"><span class="duration">15:32</span></div>
+        <h3>The Best Minecraft Friends</h3>
+      </a>
+      <p>Minecraft • Fun Moments</p>
+    </article>
+    <article class="video-card">
+      <a href="https://www.youtube.com/@LeonVix" target="_blank" rel="noopener" aria-label="Visit LeonVix YouTube channel">
+        <div class="thumb"><img src="assets/minecraft-challenge.jpeg" alt="Minecraft villager themed challenge scene"><span class="duration">11:45</span></div>
+        <h3>Minecraft Food Challenge</h3>
+      </a>
+      <p>Minecraft • Challenge</p>
+    </article>
+  </div>
+  <div class="more-wrap"><a class="outline-btn" href="https://www.youtube.com/@LeonVix" target="_blank" rel="noopener">VIEW MORE VIDEOS　 →</a></div>
+</section>
+
+<section class="join">
+  <div>
+    <div class="section-kicker">JOIN THE COMMUNITY</div>
+    <h2>SUBSCRIBE <span>NOW</span></h2>
+    <p>Don’t miss new videos, hit the subscribe button<br>and turn on the notification bell!</p>
+  </div>
+  <div class="join-action">
+    <span class="big-play">▶</span><span class="bell">♧</span>
+  </div>
+</section>
+</main>
+
+<footer>
+  <a class="brand" href="#home">LEON<span>VIX</span></a>
+  <span>© 2026 Leon Vix. All rights reserved.</span>
+  <div class="social">
+    <a href="https://www.youtube.com/@LeonVix" target="_blank" rel="noopener" aria-label="YouTube">▶</a>
+    <a href="#" aria-label="Instagram">◎</a>
+    <a href="#" aria-label="TikTok">♪</a>
+    <a href="#" aria-label="X">𝕏</a>
+  </div>
+</footer>
+</body>
+</html>
